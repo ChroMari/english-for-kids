@@ -1,7 +1,7 @@
 import cards from './../cards.js';
 
-export default function renderCard (e) {
-  const indexTeam = cards[0].indexOf(e.target.textContent);
+export default function renderCard (team) {
+  const indexTeam = cards[0].indexOf(team);
   const elementsCard = cards[indexTeam + 1];
   const cardsField = document.querySelector('.memory-game');
   cardsField.textContent = '';
