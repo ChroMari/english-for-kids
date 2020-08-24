@@ -8,8 +8,8 @@ export default function renderCardStart () {
     <div class="memory-card"> 
       <div class="back-face">
         <img class="back-face__img" src="./${cards[i + 1][0].image}" alt="${cards[0][i]}">       
-          <p class="back-face__text">${cards[0][i]}</p>
-          <p class="back-face__repeat back-face__false">Кол-во карточек 8<p>
+        <p class="back-face__text">${cards[0][i]}</p>
+        <p class="back-face__repeat back-face__false">Открыть<p>
       </div>
     </div>
   `;
