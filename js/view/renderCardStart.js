@@ -1,6 +1,5 @@
 import cards from './../cards.js';
 
-
 export default function renderCardStart () {
   const cardsField = document.querySelector('.memory-game');
 
