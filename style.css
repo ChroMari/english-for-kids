@@ -1,0 +1,239 @@
+body {
+  background: rgb(249, 249, 249);
+  font-family: 'Poppins', sans-serif;
+}
+
+.hamburger-menu {
+  display: block;
+}
+
+#menu__toggle {
+  opacity: 0;
+}
+
+.menu__btn {
+  display: block;
+  align-items: center;
+  position: fixed;
+  top: 35px;
+  left: 20px;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.menu__btn > .logo {
+  display: none;
+  color: paleturquoise;
+  font-size: 20px;
+  width: 300px;
+}
+
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #ff9557;
+}
+.menu__btn > span::before {
+  content: '';
+  top: -8px;
+}
+.menu__btn > span::after {
+  content: '';
+  top: 8px;
+}
+
+.menu__box {
+  display: block;
+  position: fixed;
+  visibility: hidden;
+  top: 0;
+  left: -100%;
+  width: 278px;
+  height: 100%;
+  margin: 0;
+  padding: 80px 0;
+  list-style: none;
+  background: #2D303A;
+  box-shadow: 0px -40px 20px rgba(0, 0, 0, 0.4);
+  z-index: 2;
+}
+
+#menu__toggle:checked ~ .menu__btn > .logo {
+  display: block;
+}
+
+#menu__toggle:checked ~ .menu__btn > span {
+  transform: rotate(45deg);
+}
+
+#menu__toggle:checked ~ .menu__btn > span::before {
+  transform: rotate(90deg);
+  top: 0;
+}
+
+#menu__toggle:checked ~ .menu__btn > span::after {
+  display: none;
+}
+
+#menu__toggle:checked ~ .menu__box {
+  visibility: visible;
+  left: 0;
+}
+
+
+.backdrop {
+  position: fixed;
+  left: -100%;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: hsla(226, 13%, 20%, 0.6);
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+#menu__toggle:checked + .backdrop {
+  left: 0;
+  opacity: 1;
+}
+
+
+#menu__toggle:checked ~ .hamburger-menu {
+  background-color: #494e62;
+}
+
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  transition-duration: .25s;
+}
+.menu__box {
+  transition-duration: .25s;
+}
+.menu__item {
+  transition-duration: .25s;
+}
+
+.box__btn {
+  margin-left: 35px;
+  color: palevioletred;
+  cursor: pointer;
+}
+
+.box__btn:hover {
+  color: powderblue;
+}
+
+/*
+-----------------Игровое поле---------------------
+*/
+.game {
+  margin: 30px auto 0;
+}
+
+/*производим центрирование игрового поля по середине экрана*/
+.memory-game {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  /*свойство преспективы*/
+  perspective: 600px;
+}
+
+.memory-card {
+  width: 200px;
+  height: 300px;
+  border-radius: 20px;
+  margin: 20px 20px 30px 20px;
+
+  position: relative;
+  box-shadow: 0 3px 15px rgba(51, 51, 51, 0.2);
+  background: #fff;
+
+  transform: scale(1);
+  /*делаем расположение в трёхмерном пространстве*/
+  transform-style: preserve-3d;
+  /*создаём эффект движения*/
+  transition: transform .5s;
+}
+
+/*накладываем эффект клика на карточку*/
+.memory-card:active {
+  transform: scale(0.97);
+  transition: transform .2s;
+}
+
+.font-face{
+  width: 200px;
+  height: 300px;
+  position: absolute;
+ 
+  /*производим скрытие*/
+  backface-visibility: hidden;
+}
+
+/*делаем разворот*/
+.font-face {
+  transform: rotateY(180deg);
+}
+
+/*делаем рубашку градиентного цвета*/
+.back-face {
+  border-radius: 20px;
+  width: 200px;
+  height: 300px;
+  position: absolute;
+  background: #fff;
+  backface-visibility: hidden;
+}
+
+/*делаем вращение карты на 180 градусов*/
+.memory-card.flip {
+  transform: rotateY(180deg);
+}
+
+/*
+------------Дизайн карточки
+*/
+.font-face__img, .back-face__img {
+  width: 200px;
+  height: 200px;
+  border-radius: 20px 20px 0px 0px;
+  border-bottom: 7px solid #ffcc67;
+}
+
+.back-face__repeat {
+  width: 170px;
+  text-align: center;
+  display: inline-block;
+  border: none;
+  font: 500 14px "Poppins", sans-serif;
+  padding: 15px;
+  cursor: pointer;
+  border-radius: 0 0 20px 20px;
+  background: #ff9557;
+  color: #fff;
+  transition: 0.2s ease;
+}
+
+.font-face__text, .back-face__text {
+  color: #000;
+  font: 700 20px "Poppins", sans-serif;
+  text-align: center;
+  margin: 5px;
+}
+
+.back-info {
+  padding: 0 15px;
+  display: flex;
+  justify-content: space-between;
+}
