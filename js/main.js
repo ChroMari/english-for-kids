@@ -26,23 +26,15 @@ btnGame.addEventListener('click', function onClickBtn (e) {
     flag = 'false';
 
     const card = document.querySelector('.memory-card');
-    console.log(card.classList);
     renderCard(cards[0][card.classList[2] - 1]);
 
   }
 
 });
 
-if (document.querySelector('.back-face__false') != null) {
-  const btns = document.querySelectorAll('.back-face__false');
-  btns.forEach(btn => btn.addEventListener('click', function onClick(e) {
-    const cardActiv = e.target.parentElement;
-    const cardTeam = cardActiv.querySelector('.back-face__text').textContent;
-    renderCard(cardTeam);
-  }))
-}
-
 const menuCategory = document.querySelectorAll('.box__btn');
 menuCategory.forEach(card => card.addEventListener('click', function onClickMenu (e) {
-  renderCard(e.target.textContent);
+  if (e.target.textContent == 'Выбрать категорию') renderCardStart();
+  else renderCard(e.target.textContent);
 }));
+

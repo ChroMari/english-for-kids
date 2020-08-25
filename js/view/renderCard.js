@@ -2,6 +2,12 @@ import cards from './../cards.js';
 import songCard from './songCard.js';
 
 export default function renderCard (team) {
+  const btnSwitch = document.querySelector('.switch');
+  if (btnSwitch.classList[1] == 'switch-none') btnSwitch.classList.remove('switch-none');
+
+  const gamePlay = document.querySelector('.static-game');
+  gamePlay.textContent = '';
+
   const indexTeam = cards[0].indexOf(team);
   const elementsCard = cards[indexTeam + 1];
   const cardsField = document.querySelector('.memory-game');

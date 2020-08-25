@@ -143,22 +143,16 @@ header {
   color: #ffcc67;
 }
 
-/*
------------------Игровое поле---------------------
-*/
 .game {
   margin: 70px auto 0;
 }
 
-/*производим центрирование игрового поля по середине экрана*/
 .memory-game {
   width: 80%;
   margin: auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-
-  /*свойство преспективы*/
   perspective: 600px;
 }
 
@@ -173,13 +167,10 @@ header {
   background: #fff;
 
   transform: scale(1);
-  /*делаем расположение в трёхмерном пространстве*/
   transform-style: preserve-3d;
-  /*создаём эффект движения*/
   transition: transform .5s;
 }
 
-/*накладываем эффект клика на карточку*/
 .memory-card:active {
   transform: scale(0.97);
   transition: transform .2s;
@@ -193,17 +184,13 @@ header {
   width: 200px;
   height: 300px;
   position: absolute;
- 
-  /*производим скрытие*/
   backface-visibility: hidden;
 }
 
-/*делаем разворот*/
 .font-face {
   transform: rotateY(180deg);
 }
 
-/*делаем рубашку градиентного цвета*/
 .back-face {
   border-radius: 20px;
   width: 200px;
@@ -213,14 +200,10 @@ header {
   backface-visibility: hidden;
 }
 
-/*делаем вращение карты на 180 градусов*/
 .memory-card.flip {
   transform: rotateY(180deg);
 }
 
-/*
-------------Дизайн карточки
-*/
 .font-face__img, .back-face__img {
   width: 200px;
   height: 200px;
@@ -256,10 +239,6 @@ header {
   display: flex;
   justify-content: space-between;
 }
-
-/*
--------Переключение режимов игры
-*/
 
 .switch {
   width: 105px;
@@ -332,4 +311,48 @@ header {
 
 .train {
   left: 19px;
+}
+
+.switch-none {
+  display: none;
+}
+
+.btn {
+  text-align: center;
+  border: none;
+  padding: 15px;
+  cursor: pointer;
+  border-radius: 20px;
+  background: #ff9557;
+  box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.38);
+  color: #fff;
+  transition: 0.2s ease;
+}
+
+.btn:hover {
+  background: #7033FF;
+}
+
+.game-none {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.game-none:hover{
+  box-shadow: none;
+}
+
+.static-game {
+  display: flex;
+  justify-content: space-between;
+  margin: 50px 10px;
+}
+
+.star {
+  margin-top: 11px;
+}
+
+.star img {
+  width: 35px;
+  height: 35px;
 }
