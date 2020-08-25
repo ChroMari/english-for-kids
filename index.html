@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+  <title>English for kids</title>
+</head>
+<body>
+
+  <header> 
+
+    <div class="switch switch-none">
+      <input type="checkbox" class="checkbox" id="checkbox">
+      <label for="checkbox" class="checkbox-label"></label>
+      <span class="train">Train</span>
+      <span class="play none">Play</span>
+      <span class="switch-bg"></span>
+    </div>
+    
+    <div class="hamburger-menu">
+      <input id="menu__toggle" type="checkbox" />
+      <div class="backdrop"></div>
+      <label class="menu__btn" for="menu__toggle">
+        <span></span>
+        <h1 class="logo">English for kids</h1>
+      </label>
+
+      <nav class="menu__box">
+        <p class="box__btn">Выбрать категорию</p>
+        <p class="box__btn">Action (set A)</p>
+        <p class="box__btn">Action (set B)</p>
+        <p class="box__btn">Animal (set A)</p>
+        <p class="box__btn">Animal (set B)</p>
+        <p class="box__btn">Clothes</p>
+        <p class="box__btn">Emotions</p>
+      </nav>
+    </div>
+  </header>
+
+  <section class="game">
+
+    <div class="memory-game"></div>
+
+    <div class="static-game"></div>
+
+  </section>
+  
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>
