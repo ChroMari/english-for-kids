@@ -327,5 +327,9 @@ header {
 }
 
 .play {
-  right: 20px;
+  right: 30px;
+}
+
+.train {
+  left: 19px;
 }

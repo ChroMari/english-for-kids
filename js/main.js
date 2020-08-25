@@ -6,37 +6,28 @@ import cards from './cards.js';
 renderCardStart();
 
 const btnGame = document.querySelector('.checkbox-label');
+let flag = 'false';
+
 btnGame.addEventListener('click', function onClickBtn (e) {
   const train = document.querySelector('.train');
   const play = document.querySelector('.play');
-  if (train.classList === 'train') {
-    train.classList.remove('none');
-    play.classList.add('none');
-
-      const card = document.querySelector('.memory-card');
-      renderCard(cards[card.classList[3]]);
-
-
-
-
-   /* if (document.querySelector('game memory-card') != null) {
-      const card = document.querySelector('.memory-card');
-      renderCard(cards[card.lastChild[1]]);
-    }*/
-
-    //возвращает поле назад
-  }
-  if (play.classList === 'play') {
+  if (train.classList.value === 'train' && flag == 'false') {
     train.classList.add('none');
     play.classList.remove('none');
+    flag = 'true';
 
     const card = document.querySelector('.memory-card');
     renderCardGame(card.classList[1]);
 
-    //делает поле игровым
+  }
+  else if (flag == 'true' ) {
+    train.classList.remove('none');
+    play.classList.add('none');
+    flag = 'false';
 
-
-    console.log('aaa');
+    const card = document.querySelector('.memory-card');
+    console.log(card.classList);
+    renderCard(cards[0][card.classList[2] - 1]);
 
   }
 
